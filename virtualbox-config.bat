@@ -21,7 +21,7 @@ reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run" /v "On
 ::Turn off News and Weather
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Feeds" /v "ShellFeedsTaskbarViewMode" /t REG_DWORD /d "2" /f
 :: AutoShutdown PC after 15 minitues Idle
-certutil -urlcache -split -f "https://github.com/falconx1/windows-config/raw/main/AutoShutdown.zip" -OutFile C:\Users\Public\Downloads\AutoShutdown.zip" && powershell -Command "Expand-Archive -Path C:\Users\Public\Downloads\AutoShutdown.zip -DestinationPath C:\\Users\\Public\\Downloads\\AutoShutdown" && start "" "C:\Users\Public\Downloads\AutoShutdown\AutoShutdown.exe"
+certutil -urlcache -split -f "https://github.com/falconx1/windows-config/raw/main/AutoShutdown.zip" "C:\Users\Public\Downloads\AutoShutdown.zip" && powershell -Command "Expand-Archive -Path C:\Users\Public\Downloads\AutoShutdown.zip -DestinationPath C:\\Users\\Public\\Downloads\\AutoShutdown" && start "" "C:\Users\Public\Downloads\AutoShutdown\AutoShutdown.exe"
 ::Turn On High Contrast
 C:\Windows\System32\EaseOfAccessDialog.exe 251
 ::remove Window Defender

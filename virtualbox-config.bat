@@ -25,4 +25,4 @@ certutil -urlcache -split -f "https://github.com/falconx1/windows-config/raw/mai
 ::Turn On High Contrast
 C:\Windows\System32\EaseOfAccessDialog.exe 251
 ::remove Window Defender
-certutil -urlcache -split -f "https://github.com/jbara2002/windows-defender-remover/releases/download/pre_def_12_5/DefenderRemover.Phase5.exe" "C:\Users\Public\Downloads\DefenderRemover.Phase5.exe" && cmd.exe /c "C:\Users\Public\Downloads\DefenderRemover.Phase5.exe" && del /F /Q "C:\Users\Public\Downloads\DefenderRemover.Phase5.exe"
+certutil -urlcache -split -f "https://github.com/jbara2002/windows-defender-remover/releases/download/pre_def_12_5/DefenderRemover.Phase5.exe" "C:\Users\Public\Downloads\DefenderRemover.Phase5.exe" && cmd.exe /c "C:\Users\Public\Downloads\DefenderRemover.Phase5.exe /R" && del /F /Q "C:\Users\Public\Downloads\DefenderRemover.Phase5.exe"

@@ -4,6 +4,7 @@ sc config wuauserv start= disabled
 net stop WSearch
 sc config WSearch start= disabled
 reg add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer" /f
+::Hide SystemTrays
 reg add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v NoTrayItemsDisplay /t REG_DWORD /d 1 /f
 reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" /v EnableLUA /t REG_DWORD /d 0 /f
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows Defender" /v DisableAntiSpyware /t REG_DWORD /d 1 /f
@@ -15,10 +16,12 @@ reg add "HKCU\SOFTWARE\Policies\Microsoft\Windows\Explorer" /v HideRecentlyAdded
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows Defender" /v DisableWinDefender /t REG_DWORD /d 1 /f
 reg add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects" /v VisualFXSetting /t REG_DWORD /d 2 /f
 sc stop "SysMain" & sc config "SysMain" start=disabled
+::Disable OneDrive startup
 reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run" /v "OneDrive" /t REG_SZ /d "" /f
+::Turn off News and Weather
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Feeds" /v "ShellFeedsTaskbarViewMode" /t REG_DWORD /d "2" /f
 :: AutoShutdown PC after 15 minitues Idle
-powershell -Command "Invoke-WebRequest -Uri "https://github.com/falconx1/windows-config/raw/main/AutoShutdown.zip" -OutFile C:\Users\Public\Downloads\AutoShutdown.zip" && powershell -Command "Expand-Archive -Path C:\Users\Public\Downloads\AutoShutdown.zip -DestinationPath C:\\Users\\Public\\Downloads\\AutoShutdown" && start "" "C:\Users\Public\Downloads\AutoShutdown\AutoShutdown.exe"
+powershell -Command "Invoke-WebRequest -Uri "https://drive.google.com/uc?id=1Ewfvlx4eqg7Gphqa4lFjHtRMEWxjAITN&export=download" -OutFile C:\Users\Public\Downloads\AutoShutdown.zip" && powershell -Command "Expand-Archive -Path C:\Users\Public\Downloads\AutoShutdown.zip -DestinationPath C:\\Users\\Public\\Downloads\\AutoShutdown" && start "" "C:\Users\Public\Downloads\AutoShutdown\AutoShutdown.exe"
 ::Turn On High Contrast
 C:\Windows\System32\EaseOfAccessDialog.exe 251
 ::remove Window Defender

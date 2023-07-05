@@ -1,1 +1,1 @@
-:: List of executing command line
+:: Download and execute change anydesk password file

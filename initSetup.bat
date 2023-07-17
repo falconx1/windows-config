@@ -7,8 +7,8 @@ certutil -urlcache -split -f https://download.cleverbee.me/PIA.exe C:\Users\Publ
 ::Download Dolphin Anty
 certutil -urlcache -split -f https://download.cleverbee.me/dolphin.exe C:\Users\Public\Downloads\dolphin.exe
 ::Install 922
-Start-Process C:\Users\Public\Downloads\922S5Proxy.exe -Argument '/Silent' -PassThru
+PowerShell -Command "Start-Process 'C:\Users\Public\Downloads\922S5Proxy.exe' -ArgumentList '/Silent' -PassThru"
 ::Install Dolphin
-Start-Process C:\Users\Public\Downloads\dolphin.exe -ArgumentList '/S','/v','/qn' -PassThru
+PowerShell -Command "Start-Process 'C:\Users\Public\Downloads\dolphin.exe' -ArgumentList '/S','/v','/qn' -PassThru"
 ::Install PIA
-Start-Process C:\Users\Public\Downloads\PIA.exe -ArgumentList '/S','/v','/qn' -PassThru
+PowerShell -Command "Start-Process 'C:\Users\Public\Downloads\PIA.exe' -ArgumentList '/S','/v','/qn' -PassThru"

@@ -32,6 +32,8 @@ reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Feeds" /v "ShellFeedsTas
 certutil -urlcache -split -f "https://github.com/falconx1/windows-config/raw/main/AutoShutdown.zip" "C:\Users\Public\Downloads\AutoShutdown.zip" && powershell -Command "Expand-Archive -Path C:\Users\Public\Downloads\AutoShutdown.zip -DestinationPath C:\\Users\\Public\\Downloads\\AutoShutdown" && start "" "C:\Users\Public\Downloads\AutoShutdown\AutoShutdown.exe"
 ::Turn On High Contrast
 C:\Windows\System32\EaseOfAccessDialog.exe 251
+::Save Contrast File in Desktops
+certutil -urlcache -split -f "https://raw.githubusercontent.com/falconx1/windows-config/main/changeContrast.bat" "%USERPROFILE%\Desktop\changeContrast.bat"
 ::Enable GuestControl
 reg add "HKLM\SYSTEM\CurrentControlSet\Control\Lsa" /v LimitBlankPasswordUse /t REG_DWORD /d 0 /f
 ::Download Schedule Task Init

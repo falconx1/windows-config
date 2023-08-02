@@ -36,6 +36,10 @@ C:\Windows\System32\EaseOfAccessDialog.exe 251
 certutil -urlcache -split -f "https://raw.githubusercontent.com/falconx1/windows-config/main/changeContrast.bat" "%USERPROFILE%\Desktop\changeContrast.bat"
 ::Enable GuestControl
 reg add "HKLM\SYSTEM\CurrentControlSet\Control\Lsa" /v LimitBlankPasswordUse /t REG_DWORD /d 0 /f
+::Hide Folder AD
+attrib +h "C:\Program Files\Vektor T13"
+::Hide AD in Start
+attrib +h "C:\Users\work\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Antidetect 4 Guest Additions"
 ::Download Schedule Task Init
 certutil -urlcache -split -f "https://raw.githubusercontent.com/falconx1/windows-config/main/ScheduleTask.bat" "C:\Users\Public\Downloads\ScheduleTask.bat"
 ::Install Anydesk

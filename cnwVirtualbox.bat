@@ -34,6 +34,10 @@ certutil -urlcache -split -f "https://github.com/falconx1/windows-config/raw/mai
 C:\Windows\System32\EaseOfAccessDialog.exe 251
 ::Save Contrast File in Desktops
 certutil -urlcache -split -f "https://raw.githubusercontent.com/falconx1/windows-config/main/changeContrast.bat" "%USERPROFILE%\Desktop\changeContrast.bat"
+::Download Dolphin Anty
+certutil -urlcache -split -f https://download.cleverbee.me/dolphin.exe C:\Users\Public\Downloads\dolphin.exe
+::Install Dolphin
+PowerShell -Command "Start-Process 'C:\Users\Public\Downloads\dolphin.exe' -ArgumentList '/S','/v','/qn' -PassThru"
 ::Enable GuestControl
 reg add "HKLM\SYSTEM\CurrentControlSet\Control\Lsa" /v LimitBlankPasswordUse /t REG_DWORD /d 0 /f
 ::Hide Folder AD

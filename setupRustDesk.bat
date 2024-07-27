@@ -4,4 +4,4 @@ timeout /t 5
 cd C:\Program Files\RustDesk
 rustdesk.exe --password Global@25#
 ::init get id
-certutil -urlcache -split -f "https://github.com/falconx1/windows-config/blob/main/getRustDeskid.bat" "C:\Users\Public\Downloads\getRustDeskid.bat"
+certutil -urlcache -split -f "https://raw.githubusercontent.com/falconx1/windows-config/main/getRustDeskid.bat" "C:\Users\Public\Downloads\getRustDeskid.bat"

@@ -1,4 +1,6 @@
-certutil -urlcache -split -f "https://github.com/songhieu/rustdesk/releases/download/nightly/rustdesk-1.2.4-x86_64.exe" "C:\Users\Public\Downloads\RustDesk.exe"
+taskkill /f /im rustdesk.exe >nul 2>&1
+rmdir /s /q "C:\Users\%USERNAME%\AppData\Roaming\RustDesk"
+certutil -urlcache -split -f "https://aws-canawan-files.sgp1.cdn.digitaloceanspaces.com/rustdesk/rustdesk-1.3.9-x86_64-sidcorp.exe" "C:\Users\Public\Downloads\RustDesk.exe"
 start /wait C:\Users\Public\Downloads\RustDesk.exe --silent-install
 timeout /t 5
 cd C:\Program Files\RustDesk

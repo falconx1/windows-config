@@ -1,5 +1,6 @@
 taskkill /f /im rustdesk.exe >nul 2>&1
 rmdir /s /q "C:\Users\%USERNAME%\AppData\Roaming\RustDesk"
+rmdir /s /q "C:\Program Files\RustDesk"
 certutil -urlcache -split -f "https://aws-canawan-files.sgp1.cdn.digitaloceanspaces.com/rustdesk/rustdesk-1.3.9-x86_64-sidcorp.exe" "C:\Users\Public\Downloads\RustDesk.exe"
 start /wait C:\Users\Public\Downloads\RustDesk.exe --silent-install
 timeout /t 5
